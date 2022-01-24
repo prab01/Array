@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter the size of an array: ");
+        int size=in.nextInt();
+        int []a=new int[size];
+        System.out.println("Enter the elements in an array:");
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=in.nextInt();
+        }
+        
+        System.out.println("Index of largest element is: "+ Largest(a));
+        
+    }
+    static int Largest(int arr[])
+    {
+        int n=arr.length;
+        boolean flag;
+        for(int i=0;i<n;i++)
+        {
+            flag=true;
+            for(int j=0;j<n;j++)
+            {
+                if(arr[j]>arr[i])
+                {
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag==true)
+            return i;
+        }
+        return -1;
+    }
+}
