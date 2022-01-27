@@ -1,0 +1,22 @@
+import java.util.Arrays;
+public class Main
+{
+	public static void main(String[] args) {
+	    int a[]={10,20,30,40,50};
+	    swap(a);
+		System.out.println(Arrays.toString(a));
+	}
+	static void swap(int arr[])
+	{
+	    int start=0;
+	    int end=arr.length-1;
+	    while(start<end)
+	    {
+	        int temp=arr[start];
+	        arr[start]=arr[end];
+	        arr[end]=temp;
+	        start++;
+	        end--;
+	    }
+	}
+}
