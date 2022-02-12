@@ -1,0 +1,28 @@
+class Main
+{
+    public static void main(String[] args)
+    {
+        int a[]={8,2,6,5,7};
+        int ans;
+        ans=stockBS(a);
+        System.out.println(ans);
+        
+        
+    }
+    static int stockBS(int[] a)
+    {
+        int maxprofit=0,minprice=a[0];
+        for(int i=1;i<a.length;i++)
+        {
+            if(a[i]-minprice>maxprofit)
+            {
+                maxprofit=a[i]-minprice;
+            }
+            if(a[i]<minprice)
+            {
+                minprice=a[i];
+            }
+        }
+        return maxprofit;
+    }
+}
