@@ -1,0 +1,28 @@
+import java.lang.Math;
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[]={3,0,1,2,5};
+	    int maxwater=rainw(arr);
+		System.out.println(maxwater);
+	}
+	static int rainw(int [] arr)
+	{
+	    int res=0;
+	    for(int i=1;i<arr.length-1;i++)
+	    {
+	        int lmax=arr[i];
+	        for(int j=0;j<i;j++)
+	        {
+	          lmax=Math.max(lmax,arr[j]);
+	        }
+	        int rmax=arr[i];
+	        for(int j=i+1;j<arr.length;j++)
+	        {
+	            rmax=Math.max(rmax,arr[j]);
+	        }
+	        res=res+Math.min(lmax,rmax)-arr[i];
+	    }
+	    return res;
+	}
+}
