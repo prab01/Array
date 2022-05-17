@@ -1,0 +1,20 @@
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[]={1, -2, 3, -1, 2};
+	    int ans=maxsubsum(arr);
+		System.out.println(ans);
+	}
+	static int maxsubsum(int[] arr)
+	{
+	    int res=arr[0];
+	    int maxending=arr[0];
+	    for(int i=1;i<arr.length;i++)
+	    {
+	        maxending=Math.max(maxending+arr[i],arr[i]);
+	        res=Math.max(maxending,res);
+	    }
+	    return res;
+	}
+}
